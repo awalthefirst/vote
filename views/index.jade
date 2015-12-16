@@ -1,0 +1,21 @@
+include ./fragment/head.jade
+	body
+		.container-fluid.no_padding
+			include ./fragment/navbar.jade
+			.jumbotron
+				.container
+					.row.text-center
+						.col-md-6.col-xs-12 
+							h1 VoteBook
+							p Create polls and share with friends 
+						.col-md-6.col-xs-12
+							span: i.fa.fa-archive.icon.colorScheme
+						.col-xs-12.polls
+							p: a(onClick="(function(){ $('body').scrollTo('.recent') })()" ) Recent Polls
+
+			.container.recent
+				h3.text-center(style="margin-bottom:10%") Click a slice to vote
+				.row.pollsdiv
+			include ./fragment/footer.jade
+			include ./fragment/Auth.jade
+			include ./fragment/votepop.jade

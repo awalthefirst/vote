@@ -1,0 +1,21 @@
+include ./fragment/head.jade
+	body
+		div.container-fluid
+			include ./fragment/navbar.jade
+			include ./fragment/Auth.jade
+			.container(style="margin-top:50px")
+				.row.text-center
+					header.voteAvail
+						h3 Waiting for your vote ... 
+						p choose you slice to vote
+						.container
+							.row.Userdiv
+					header.voteUnavail(style="display: none")
+						h3 Oops something went wrong... 
+						p Cannot find the poll
+						p It's deleted or the url is invalid
+		
+
+			include ./fragment/footer.jade
+			include ./fragment/votepop.jade
+

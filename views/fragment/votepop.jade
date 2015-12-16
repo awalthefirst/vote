@@ -1,0 +1,23 @@
+.voteOverlay
+.voteRes
+	div.votelink(style="margin:0 auto;margin-top:40%;display: none;position: relative")
+		div.center-it
+			p.initial
+				i.fa.fa-spinner.rotating.fa-2x
+				span Voting...
+			p.success(style="display: none;font-size: 16px") 
+			p.error(style="display: none")
+
+	div.sharelink.center-text(style="margin:0 auto; width:40%;display: none")
+		span.voteClose.glyphicon.glyphicon-remove-circle
+		div.center-it
+			p.initial.shareText 
+		
+
+	div.deletelink(style="margin:0 auto;margin-top:40%;display: none;position: relative")
+		div.center-it
+			p.initial
+				i.fa.fa-spinner.rotating.fa-2x
+				span Delecting...
+			p.success(style="display: none;font-size: 16px") 
+			p.error(style="display: none;font-size: 16px")

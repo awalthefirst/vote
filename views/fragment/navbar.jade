@@ -1,0 +1,21 @@
+nav.navbar.navbar-default.navbar-fixed-top
+	.container
+		.navbar-header
+			a(href="/").navbar-brand VoteBook
+
+			button(type="button" data-toggle="collapse" data-target=".navHead").navbar-toggle.collapsed
+				span.icon-bar
+				span.icon-bar
+				span.icon-bar
+
+		.collapse.navbar-collapse.navHead.text-center.navbar-right
+			ul.nav.navbar-nav
+				if login == false
+					li: a(href="#" data-toggle="collapse" data-target=".navHead" id="login").showoverlay Log In
+					li: a(href="#" data-toggle="collapse" data-target=".navHead" id="signin").showoverlay Sign Up
+				else 
+					li: a(href="/mypolls") My Polls 
+					li: a(href="/logout") Log Out
+					
+
+

@@ -1,0 +1,35 @@
+.overlay
+	.row.text-center.log
+		.wrapper.col-xs-12.col-md-6.col-md-offset-3
+			form.form-signin(method="POST" action="/login")
+				span.close.glyphicon.glyphicon-remove-circle
+				h2.form-signin-heading Please login
+				input.form-control(type='email', name='email', placeholder='Email' required="true")
+				input.form-control(type='password', name='password', placeholder='Password', required="true")
+				button.btn.btn-lg.btn-primary.btn-block(type='submit') Login
+				if loginError
+					p.error Error : #{loginError}
+					script.
+						$(".overlay").show();
+						$(".log").show();
+
+
+
+	.row.text-center.sign
+		.wrapper.col-xs-12.col-md-6.col-md-offset-3
+			form.form-signin(method="POST" action="/signup")
+				span.close.glyphicon.glyphicon-remove-circle
+				h2.form-signin-heading Sign Up
+				input.form-control(type='text' name='username' placeholder='Username' required="true")
+				input.form-control(type='email' name='email' placeholder='Email' required="true")
+				input.form-control(type='password' name='password' placeholder='Password' required="true")
+				button.btn.btn-lg.btn-primary.btn-block(type='submit') Sign Up
+				if signupError
+					p.error Error : #{signupError}
+					script.
+						$('.overlay').show();
+						$(".log").hide();
+
+
+
+	

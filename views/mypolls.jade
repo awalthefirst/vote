@@ -1,0 +1,44 @@
+include ./fragment/head.jade
+	body
+		div.container-fluid
+			include ./fragment/navbar.jade
+		.container(style="margin-top:50px")
+			.row.text-center
+				header
+					h3 Welcome #{username}
+					p Here is your poll board, you can View, Create or Modify polls
+					button.btn.btn-default(onClick="(function(){ $('body').scrollTo('.form-signin',{offsetTop : '70'}) })()" ) Add polls
+				if userPolls 
+					.container
+						.row.Userdiv
+						
+					script.
+						(function(){
+						 window.Votebook = "#{username}"
+						})()
+				else
+					h4 You don't have any polls yet Create One
+					p it's easy
+					
+			.form-signin.text-center
+				form(method="POST" action="/polls")
+					label Poll Name
+					input.form-control.capital(type="text" name='pollName' placeholder="Best Social Media?" required)
+					label Choice
+					input.form-control.capital(type="text" name='choice' placeholder="Facebook?" required)
+					input.form-control.capital(type="text" name='choice' placeholder="Twitter?" required)
+					button.btn.btn-lg.btn-default.btn-block.moreChoice(type='') More choice
+					label.btn-block Who can vote
+					.btn-group(data-toggle='buttons')
+						label.btn.btn-default Signed Users
+							input#q156(type='radio', name='state', value='private' required) 
+						label.btn.btn-default Everybody
+							input#q157(type='radio', name='state', value='public' required) 
+					button.btn.btn-lg.btn-block.btn-primary(type='submit') Publish
+					if error
+						p.error #{error}
+		
+
+		include ./fragment/footer.jade
+		include ./fragment/votepop.jade
+
